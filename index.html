@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1807879 - Blog Index</title>
+	
+	<meta name="description" content="A blog created for a university assignment.">
+	<meta name="keywords" content="blog, life, language, future, aru">
+	<meta name="author" content="Freazy Warr">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<meta charset="UTF-8">
+	
+</head>
+<body>
+	<div class="blogTitle">
+		<h1>1807879</h1>
+		<p>This blog was created by an English Literature student at Anglia Ruskin University. It serves as a summative assignment for the module New Media Discourse.</p>
+		<p>This site is best viewed on Desktop with Mozilla Firefox!</p>
+		<p>Click anywhere to reveal the blog.</b>
+	</div>
+
+	<div class="index">
+	
+		<div class="indexItem" onclick="location.href='life.html'">
+			<div class="indexItemContent" style="background-image: url('images/indexLife.jpg');">
+				<div class="indexItemText">
+					<h2>Life</h2>
+					<p>Social Media, its affordances and my daily life.</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="indexItem" onclick="location.href='language.html'">
+			<div class="indexItemContent" style="background-image: url('images/indexLanguage.jpg');">
+				<div class="indexItemText">
+					<h2>Language</h2>
+					<p>Smartphones and their impact on language and literacy.</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="indexItem" onclick="location.href='future.html'">
+			<div class="indexItemContent" style="background-image: url('images/indexFuture.jpg');">
+				<div class="indexItemText">
+					<h2>Future</h2>
+					<p>Social Media and the future of communication.</p>
+				</div>
+			</div>
+		</div>	
+		
+	</div>
+	
+	<div class="siteNotice">
+		<div class="siteNoticeBox">
+			<div class="siteNoticeText">
+				<h2>SITE NOTICE</h2>
+				<p>This blog was created to fulfill a summative assignment.</p>
+				<p>Student Id: 1807879<br>
+				Module: New Media Discourse<br>
+				Anglia Ruskin University</p>
+				<p>This site was built with Firefox for Desktop in mind. Considerations have been made for other browsers and platforms, though they have not been fully tested. </p>
+				<button type="button" id="siteNoticeButton" onclick="siteNoticeAccept()">Accept</button> 
+
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+<script>
+//The site will need to behave differently if the user is using a touch screen device.
+//This is to detect if the user has a touch screen device.
+var touchPoints = navigator.maxTouchPoints;
+//console.log(touchPoints);
+
+
+
+//The vertical columns on the desktop site can be hard to read.
+//The following variable is true if the screen is wider than it is taller.
+//This is checked every second in case the user rotates their phone.
+checkAspectRatio()
+setInterval(checkAspectRatio, 0);
+
+function checkAspectRatio() {
+	//console.log("Checking Ratio")
+	if (window.screen.height < window.screen.width) {
+		//console.log("The screen is widescreen.");
+		indexItem = document.getElementsByClassName("indexItem")
+		for (var x = 0; x < indexItem.length; x++) {
+			indexItem[x].style.height = "100vh";
+			indexItem[x].style.width = "33.33%";
+		} 
+		
+		siteNoticeBox = document.getElementsByClassName("siteNoticeBox")
+		siteNoticeBox[0].style.borderRadius = "2vh";
+		siteNoticeText = document.getElementsByClassName("siteNoticeText")
+		siteNoticeText[0].style.fontSize = "4vh";
+		siteNoticeButton = document.getElementById("siteNoticeButton");
+		siteNoticeButton.style.padding = "1vh 2vh";
+		siteNoticeButton.style.fontSize = "4vh";
+		siteNoticeButton.style.borderRadius = "2vh";
+		
+		
+		} else {
+		//console.log("The screen is not widescreen.");
+		indexItem = document.getElementsByClassName("indexItem")
+		for (var x = 0; x < indexItem.length; x++) {
+			indexItem[x].style.height = "33.33%";
+			indexItem[x].style.width = "100vw";
+		} 
+		siteNoticeBox = document.getElementsByClassName("siteNoticeBox")
+		siteNoticeBox[0].style.borderRadius = "1vh";
+		siteNoticeText = document.getElementsByClassName("siteNoticeText")
+		siteNoticeText[0].style.fontSize = "2vh";
+		siteNoticeButton = document.getElementById("siteNoticeButton");
+		siteNoticeButton.style.padding = "0.5vh 1vh";
+		siteNoticeButton.style.fontSize = "2vh";
+		siteNoticeButton.style.borderRadius = "1vh";
+	}
+}
+
+function siteNoticeAccept() {
+	//console.log("Site Notice Accepted");
+	if (touchPoints > 0) {
+		//console.log("User has a touch screen.");
+	
+		indexItemContent = document.getElementsByClassName("indexItemContent");
+		indexItemText = document.getElementsByClassName("indexItemText");
+		for (var x = 0; x < indexItemContent.length; x++) {
+			indexItemContent[x].style.transition = "none";
+			indexItemContent[x].style.filter = "brightness(100%)";
+			indexItemContent[x].style.transform = "scale(1.2)";
+			indexItemText[x].style.transition = "none";
+			indexItemText[x].style.opacity = "1";
+		} 
+	} else {
+		//console.log("User does not have a touch screen.");
+	}
+	siteNotice = document.getElementsByClassName("siteNotice");
+	siteNotice[0].style.transform = "translate(0px, -100%)";
+}
+</script>
+</html> 
