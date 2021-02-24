@@ -70,8 +70,8 @@
 <script>
 //The site will need to behave differently if the user is using a touch screen device.
 //This is to detect if the user has a touch screen device.
-var touchPoints = navigator.maxTouchPoints;
-console.log(touchPoints);
+//var touchPoints = navigator.maxTouchPoints;
+//console.log(touchPoints);
 
 
 
@@ -121,21 +121,21 @@ function checkAspectRatio() {
 
 function siteNoticeAccept() {
 	//console.log("Site Notice Accepted");
-	if (touchPoints > 0) {
+	//if (touchPoints > 0) {
 		//console.log("User has a touch screen.");
 	
-		indexItemContent = document.getElementsByClassName("indexItemContent");
-		indexItemText = document.getElementsByClassName("indexItemText");
-		for (var x = 0; x < indexItemContent.length; x++) {
-			indexItemContent[x].style.transition = "none";
-			indexItemContent[x].style.filter = "brightness(100%)";
-			indexItemContent[x].style.transform = "scale(1.2)";
-			indexItemText[x].style.transition = "none";
-			indexItemText[x].style.opacity = "1";
-		} 
-	} else {
-		//console.log("User does not have a touch screen.");
-	}
+	//	indexItemContent = document.getElementsByClassName("indexItemContent");
+	//	indexItemText = document.getElementsByClassName("indexItemText");
+	//	for (var x = 0; x < indexItemContent.length; x++) {
+	//		indexItemContent[x].style.transition = "none";
+	//		indexItemContent[x].style.filter = "brightness(100%)";
+	//		indexItemContent[x].style.transform = "scale(1.2)";
+	//		indexItemText[x].style.transition = "none";
+	//		indexItemText[x].style.opacity = "1";
+	//	} 
+	//} else {
+	//	//console.log("User does not have a touch screen.");
+	//}
 	siteNotice = document.getElementsByClassName("siteNotice");
 	siteNotice[0].style.transform = "translate(0px, -100%)";
 }
