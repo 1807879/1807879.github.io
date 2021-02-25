@@ -61,4 +61,41 @@
 	</div>
 
 </body>
+<script>
+checkAspectRatio()
+setInterval(checkAspectRatio, 0);
+
+function checkAspectRatio() {
+	//console.log("Checking Ratio")
+	if (window.screen.height < window.screen.width) {
+		//console.log("The screen is widescreen.");
+		header = document.getElementsByClassName("header")
+		header[0].style.height= "13vh";
+		headerItem = document.getElementsByClassName("headerItem")
+		headerItem[0].style.fontSize = "9vh";
+		index = document.getElementsByClassName("index")
+		index[0].style.top = "13vh";
+		blogBox = document.getElementsByClassName("blogBox")
+		blogBox[0].style.top = "20vh";
+		indexItem = document.getElementsByClassName("indexItem")
+		for (var x = 0; x < indexItem.length; x++) {
+			indexItem[x].style.fontSize = "4vh";
+		}
+	} else {
+		//console.log("The screen is not widescreen.");
+		header = document.getElementsByClassName("header")
+		header[0].style.height= "9vh";
+		headerItem = document.getElementsByClassName("headerItem")
+		headerItem[0].style.fontSize = "6vh";
+		index = document.getElementsByClassName("index")
+		index[0].style.top = "9vh";
+		blogBox = document.getElementsByClassName("blogBox")
+		blogBox[0].style.top = "16vh";
+		indexItem = document.getElementsByClassName("indexItem")
+		for (var x = 0; x < indexItem.length; x++) {
+			indexItem[x].style.fontSize = "2.2vh";
+		} 
+	}
+}
+</script>
 </html> 
