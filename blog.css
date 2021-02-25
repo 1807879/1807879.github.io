@@ -1,0 +1,95 @@
+body {
+	margin: 0px; 
+	margin-top: 0px; 
+	padding: 0; 
+	background-color: #D9D9D6;
+	margin: auto;
+	font-family: "Arial", Arial, serif; 
+	color: #27251F;
+
+}
+
+.header {
+	position: absolute;
+	left: 5vw;
+	width: 90vw;
+	height: 13vh;
+	background-color: #27251F;
+	color: #D9D9D6;
+}
+
+.headerItem {
+	text-align: center;
+	font-size: 8vh;
+	cursor: pointer;
+}
+
+.headerItem:hover {
+	color: #00911D; 
+	filter: brightness(150%);
+}
+
+.index {
+	position: absolute;
+	left: 5vw;
+	top: 13vh;
+	width: 90vw;
+	height: 7vh;
+	background-color: #27251F;
+	color: #D9D9D6;	
+}
+
+.indexItem {
+	float:left;
+	width: 33.33%;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	flex-wrap: wrap;
+	text-align: center;
+	font-size: 4vh;
+
+}
+
+.indexItem:hover {
+	color: #00911D; 
+	filter: brightness(150%);
+}
+
+.blogBox {
+	position: absolute;
+	left: 5vw;
+	top: 20vh;
+	width: 90vw;
+	background-color: #27251F;
+	color: #D9D9D6;
+}
+
+.blogContent {
+	font-size: 30px;
+	text-align: justify;
+	width: 92%;
+	padding-left: 4%;
+	padding-right: 4%;
+}
+
+.blogContentImage {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	width: 92%;
+	height: 80vh;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding-left: 4%;
+	padding-right: 4%;
+}
+
+.blogContentImageText {
+	text-align: center;
+	font-size: 30px;
+
+}

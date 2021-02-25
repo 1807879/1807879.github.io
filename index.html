@@ -68,16 +68,9 @@
 	
 </body>
 <script>
-//The site will need to behave differently if the user is using a touch screen device.
-//This is to detect if the user has a touch screen device.
-//var touchPoints = navigator.maxTouchPoints;
-//console.log(touchPoints);
-
-
-
 //The vertical columns on the desktop site can be hard to read.
 //The following variable is true if the screen is wider than it is taller.
-//This is checked every second in case the user rotates their phone.
+//This is checked every less-than-a-second in case the user rotates their phone.
 checkAspectRatio()
 setInterval(checkAspectRatio, 0);
 
@@ -120,14 +113,9 @@ function checkAspectRatio() {
 }
 
 function siteNoticeAccept() {
-	//console.log("Site Notice Accepted");
-	
 	//Check if the user is on mobile.
 	if (/Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-
-	//if (touchPoints > 0) {
-		console.log("User is on mobile.");
-	
+		//console.log("User is on mobile.");
 		indexItemContent = document.getElementsByClassName("indexItemContent");
 		indexItemText = document.getElementsByClassName("indexItemText");
 		for (var x = 0; x < indexItemContent.length; x++) {
@@ -138,7 +126,7 @@ function siteNoticeAccept() {
 			indexItemText[x].style.opacity = "1";
 		} 
 	} else {
-		console.log("User is not on mobile.");
+		//console.log("User is not on mobile.");
 	}
 	siteNotice = document.getElementsByClassName("siteNotice");
 	siteNotice[0].style.transform = "translate(0px, -100%)";
