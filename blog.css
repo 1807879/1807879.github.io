@@ -113,6 +113,26 @@ body {
 	width: 70%;
 }
 
+.blogContentImageDescription a:link {
+	color: #00911D; 
+	text-decoration: none;
+}
+
+.blogContentImageDescription a:hover {
+	color: #00911D; 
+	filter: brightness(150%);
+}
+
+.blogContentImageDescription a:visited{
+	color: #00911D; 
+	filter: brightness(150%);
+}
+
+.blogContentImageDescription a:active{
+	color: #00911D; 
+	filter: brightness(150%);	
+}
+
 .blogContentImageSource{
 	float: left;
 	text-align: right;
